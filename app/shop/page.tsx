@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components/ProductCard";
+import { ShopPagination } from "./ShopPagination";
 import { categories, products } from "@/lib/products";
 
 const container = "mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8";
@@ -45,10 +45,8 @@ export default function ShopPage() {
       </section>
 
       <section className="pb-[clamp(62px,8vw,112px)]">
-        <div className={`${container} grid grid-cols-3 gap-[18px] max-lg:grid-cols-2 max-md:grid-cols-1`}>
-          {products.map((product) => (
-            <ProductCard product={product} key={product.slug} />
-          ))}
+        <div className={container}>
+          <ShopPagination products={products} />
         </div>
       </section>
     </main>
